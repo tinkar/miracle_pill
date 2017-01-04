@@ -9,20 +9,101 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    // UIPickerViewDataSource, UIPickerViewDelegate are necessary for the state picker
     
     let statesArray = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
     
-    @IBOutlet var stackView: UIStackView!
+    
+    @IBOutlet var buyButton: UIButton!
+    
+    @IBOutlet var postCodeTextField: UITextField!
+       
+    @IBOutlet var countryLabel: UILabel!
+    
+    @IBOutlet var countryTextField: UITextField!
+    
+    @IBOutlet var postCodeLabel: UILabel!
     
     @IBOutlet var statePicker: UIPickerView!
     
     @IBOutlet var chooseYourStateBtn: UIButton!
     
+    @IBOutlet var miracleImage: UIImageView!
+ 
+    @IBOutlet var successImageView: UIImageView!
+    
+    @IBOutlet var miracleLabel: UILabel!
+    
+    @IBOutlet var cashLabel: UILabel!
+    
+    @IBOutlet var divider: UIView!
+    
+    @IBOutlet var fullName: UILabel!
+    
+    @IBOutlet var fullNameTextField: UITextField!
+    
+    @IBOutlet var streetAddresLabel: UILabel!
+    
+    @IBOutlet var streetAddresTextField: UITextField!
+    
+    @IBOutlet var cityLabel: UILabel!
+    
+    @IBOutlet var cityTextField: UITextField!
+    
+    @IBOutlet var stateLabel: UILabel!
+    
+    @IBAction func buyButtonPressed(_ sender: Any) {
+        
+        successImageView.isHidden = false
+        
+        buyButton.isHidden = true
+        
+        postCodeTextField.isHidden = true
+        
+        countryLabel.isHidden = true
+        
+        countryTextField.isHidden = true
+        
+        postCodeLabel.isHidden = true
+        
+        statePicker.isHidden = true
+        
+        chooseYourStateBtn.isHidden = true
+        
+        miracleImage.isHidden = true
+        
+        miracleLabel.isHidden = true
+        
+        cashLabel.isHidden = true
+        
+        divider.isHidden = true
+        
+        fullName.isHidden = true
+        
+        fullNameTextField.isHidden = true
+        
+        streetAddresLabel.isHidden = true
+        
+        streetAddresTextField.isHidden = true
+        
+        cityLabel.isHidden = true
+        
+        cityTextField.isHidden = true
+        
+        stateLabel.isHidden = true
+    }
+    
+    
+    
     @IBAction func chooseYourStateButton(_ sender: Any) {
         
         statePicker.isHidden = false
-        stackView.isHidden = true
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        postCodeLabel.isHidden = true
+        postCodeTextField.isHidden = true
+        
     }
     
     override func viewDidLoad() {
@@ -30,6 +111,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         statePicker.dataSource = self
         statePicker.delegate = self
+        
         // connects the statePicker datasource and delegate
     }
 
@@ -55,7 +137,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         chooseYourStateBtn.setTitle(statesArray[row], for: UIControlState.normal)
         statePicker.isHidden = true
-        stackView.isHidden = false
+        countryLabel.isHidden = false
+        countryTextField.isHidden = false
+        postCodeLabel.isHidden = false
+        postCodeTextField.isHidden = false
         
     }
     // sets what row was selected in the picker and what happens next
