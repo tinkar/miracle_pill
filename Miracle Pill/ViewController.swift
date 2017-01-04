@@ -8,8 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet var statePicker: UIPickerView!
+    
+    @IBOutlet var chooseYourStateBtn: UIButton!
+    
+    @IBAction func chooseYourStateButton(_ sender: Any) {
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
