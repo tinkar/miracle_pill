@@ -12,6 +12,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     let statesArray = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
+    
+    @IBOutlet var stackView: UIStackView!
+    
     @IBOutlet var statePicker: UIPickerView!
     
     @IBOutlet var chooseYourStateBtn: UIButton!
@@ -19,6 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func chooseYourStateButton(_ sender: Any) {
         
         statePicker.isHidden = false
+        stackView.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -51,6 +55,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         chooseYourStateBtn.setTitle(statesArray[row], for: UIControlState.normal)
         statePicker.isHidden = true
+        stackView.isHidden = false
         
     }
     // sets what row was selected in the picker and what happens next
